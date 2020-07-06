@@ -8,7 +8,8 @@ app=Flask(__name__)
 @app.route('/',methods=['GET', 'POST'])
 def hellow_world():
     if request.method== 'GET':
-        return render_template('index.html', value="hi")
+        return render_template('index.html',
+                    duct='', lob='', adv='')
 
     if request.method=='POST':
 
@@ -16,12 +17,11 @@ def hellow_world():
             print("file not uploaded")
             return 
         file=request.files['file']
-        file.save('m.tif')
-        image=file.read()
-        img_pred=img_load('./m.tif')
-        res=prediction(dir='./',img=img_pred)
-        return render_template('result.html', 
-                    flower=res)
+        file.save('m.tiff')
+        img_pred=img_load('./m.tiff')
+        duct, lob, adv=prediction(dir='./',img=img_pred)
+        return render_template('index.html', 
+                    duct=duct, lob=lob, adv=adv)
 
 
 if __name__ == '__main__':

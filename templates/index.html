@@ -1,19 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-
-    <title>MY FLOWER APP</title>
+  <meta charset="UTF-8">
+  <title>Laboratorio de patología</title>
+  <!-- NAVIGATION -->
+  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+  <link rel="stylesheet" href="static\style.css" >
+  <script src="https://kit.fontawesome.com/9074998fc4.js" crossorigin="anonymous"></script>
 </head>
+
+
+
 <body>
-    <h2>Sube una imagen de flor</h2>
-    <form  method="post" enctype=multipart/form-data>
-       
-        <input type="file" name="file">
-        <input type="submit" value="upload">
+  <div id="content">
+  <!-- NAVIGATION -->
+  <div id="nav">
+       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!--aqui va el logo-->
 
-        <button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Mi perfil  <i class="fas fa-user">
 
-        </button>
-    </form>
+          </i> <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Salir <i class="fas fa-sign-out-alt"></i>
+          </a>
+        </li>
+      </ul>
+      <li class="nav-item">
+        <a class="nav-link" href="">Laboratorio de patología</a>
+      </li>
+    </div>
+  </nav>
+  </div>
+ 
+
+<div id="header">Clasificación de células</div>
+
+  <!--main content -->
+  <div id="contenido">
+  <div id="img-selector">
+
+    <div id="txt-img-selector">
+      <h2>Seleccione una imagen </h2>
+    </div>
+
+    <div id="img-img-selector">
+      <img src="static\m.png" width="300" height="150">
+    </div>
+
+    <div id="btns-img-selector">
+      <form method="post" enctype=multipart/form-data>
+
+        <i class="far fa-file-image" id="inp">
+          <input  type="file" name="file"></i>
+    
+        <i class="fas fa-arrow-circle-up" id="inp">
+          <input type="submit" value="Analizar"></i>
+      </form>
+    </div>
+
+  </div>
+
+  <div id="img-results">
+    <div id="text-resultados">
+      <h2>Resultados </h2>
+    </div>
+
+    <div id="porcentajes-resultados">
+      <h4> Ductal: {{ duct }} %</h4>
+      <h4> Lobular: {{ lob }} % </h4>
+    </div>
+
+    <div id="advertencia-resultados"> 
+      <H2>{{ adv }}</H2>
+    </div>
+  </div>
+
+</div>
+<div id="footer">
+  ESTA HERRAMIENTA ES SOLO DE SOPORTE, LA JUSTIFICACIÓN DEL REPORTE DEBE ESTAR VALIDADA POR UN ESPECIALISTA EN EL TEMA. NO PUEDE UTILIZARSE
+   CON FINES DE AUTODIAGNÓSTICO.
+</div>
+</div>
 </body>
+
 </html>

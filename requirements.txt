@@ -7,7 +7,6 @@ joblib==0.15.1
 Keras==2.3.1
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.0
-matplotlib @ file:///C:/ci/matplotlib-base_1592401131947/work
 numpy==1.18.1
 numpydoc==1.0.0
 pandas==1.0.4

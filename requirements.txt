@@ -1,0 +1,36 @@
+fastai==1.0.61
+fastprogress==0.2.2
+flake8==3.7.9
+Flask==1.1.2
+gunicorn==20.0.4
+imagesize==1.2.0
+importlib-metadata==1.6.1
+intervaltree==3.0.2
+ipykernel==5.3.0
+ipython @ file:///C:/ci/ipython_1592330400575/work
+ipython-genutils==0.2.0
+joblib==0.15.1
+Keras==2.3.1
+Keras-Applications==1.0.8
+Keras-Preprocessing==1.1.0
+matplotlib @ file:///C:/ci/matplotlib-base_1592401131947/work
+numpy==1.18.1
+numpydoc==1.0.0
+pandas==1.0.4
+Pillow==7.1.2
+python-dateutil==2.8.1
+python-jsonrpc-server==0.3.4
+python-language-server==0.31.10
+scikit-learn==0.22.1
+scipy==1.4.1
+seaborn==0.10.1
+tensorboard==1.14.0
+tensorflow==1.14.0
+tensorflow-estimator==1.14.0
+termcolor==1.1.0
+terminado==0.8.3
+testpath==0.4.4
+Theano==1.0.4
+thinc==7.0.8
+torch==1.5.0
+torchvision==0.6.0

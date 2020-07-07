@@ -15,14 +15,18 @@
 
 }
 
-#header{
-  height: 5%;
-  border-radius:  1em;
-  margin: 0.25em;
-  text-align: center;
-  font-size: 40px;
+#nav-text{
+ color: darkgray;
+ text-align: center;
 
 }
+
+#desc{
+background-color: dimgrey;
+color:rgb(255, 255, 255);
+}
+
+
 #contenido{
   height: 60%;
 
@@ -31,7 +35,6 @@
 #img-selector{
   height: 100%;
   width: 47%;
-  background-color: aqua;
   border-radius: 2%;
   float: left;
   margin: 1em;
@@ -49,8 +52,9 @@
   align-content: center;
   text-align: center;
 }
-#porcentajes-resultados{
+.porcentajes-resultados{
   font-size: larger;
+  background-color: darkgray;
 }
 
 #btns-img-selector{
@@ -62,14 +66,12 @@
 #inp, #advertencia-resultados{
   height: 7%;
   font-size: small;
-  background-color: rgb(141, 128, 76);
   text-align: center;
 }
 
 #img-results{
   height: 100%;
   width: 47%;
-  background-color: chocolate;
   border-radius: 2%;
   float: right;
   margin: 1em;
@@ -77,6 +79,9 @@
 
 #footer{
   height: 10%;
-  background-color: crimson;
+  
 }
 
+#title-model{
+  font-size: larger;
+}

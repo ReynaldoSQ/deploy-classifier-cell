@@ -1,9 +1,11 @@
 from flask import Flask, request, render_template
 
-from classifier import prediction, img_load
+from classifier import prediction, img_load, img_to_png
 
 
 app=Flask(__name__)
+
+
 
 @app.route('/',methods=['GET', 'POST'])
 def hellow_world():
@@ -17,8 +19,8 @@ def hellow_world():
             print("file not uploaded")
             return 
         file=request.files['file']
-        file.save('m.tiff')
-        img_pred=img_load('./m.tiff')
+        file.save(r'static\celula.PNG')
+        img_pred=img_load(r'static\celula.PNG')
         duct, lob, adv=prediction(dir='./',img=img_pred)
         return render_template('index.html', 
                     duct=duct, lob=lob, adv=adv)

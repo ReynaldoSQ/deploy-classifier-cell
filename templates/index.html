@@ -7,6 +7,7 @@
   <!-- NAVIGATION -->
   <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
   <link rel="stylesheet" href="static\style.css" >
+  <!--<link rel="stylesheet" href="C:\Users\Jos_r\Desktop\dep-celulas\static\style.css" >-->
   <script src="https://kit.fontawesome.com/9074998fc4.js" crossorigin="anonymous"></script>
 </head>
 
@@ -14,6 +15,7 @@
 
 <body>
   <div id="content">
+  
   <!-- NAVIGATION -->
   <div id="nav">
        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -26,31 +28,41 @@
 
           </i> <span class="sr-only">(current)</span></a>
         </li>
+        
         <li class="nav-item">
           <a class="nav-link" href="#">Salir <i class="fas fa-sign-out-alt"></i>
           </a>
         </li>
       </ul>
+        
+      <ul class="navbar-nav mr-auto"> <li>
+        <h2 id="nav-text">Clasificación de células</h2>
+      </li>
+    </ul>
+     
+
       <li class="nav-item">
-        <a class="nav-link" href="">Laboratorio de patología</a>
+        <a id="nav-text" class="nav-link" href="">Laboratorio de patología</a>
       </li>
     </div>
   </nav>
   </div>
  
 
-<div id="header">Clasificación de células</div>
+<div id="desc">
+ <h5>Herramienta para la clasificación de cáncer de mama. Disponible para los subtipos de carcinomas CDI y CLI </h5>
+</div>
 
   <!--main content -->
   <div id="contenido">
   <div id="img-selector">
 
     <div id="txt-img-selector">
-      <h2>Seleccione una imagen </h2>
+      <h2>Imagen </h2>
     </div>
 
     <div id="img-img-selector">
-      <img src="static\m.png" width="300" height="150">
+      <img src="static\celula.PNG" width="245" height="245">
     </div>
 
     <div id="btns-img-selector">
@@ -68,12 +80,15 @@
 
   <div id="img-results">
     <div id="text-resultados">
-      <h2>Resultados </h2>
+      <h2> Resultados </h2>
     </div>
 
     <div id="porcentajes-resultados">
       <h4> Ductal: {{ duct }} %</h4>
       <h4> Lobular: {{ lob }} % </h4>
+      <div id="chart" align="center">
+        <div id="number_format_chart">
+        </div>
     </div>
 
     <div id="advertencia-resultados"> 
@@ -87,6 +102,39 @@
    CON FINES DE AUTODIAGNÓSTICO.
 </div>
 </div>
+
+
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {packages:['corechart']});
+  google.charts.setOnLoadCallback(drawStuff);
+
+    function drawStuff() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Tipo');
+      data.addColumn('number', 'Probabilidad');
+      data.addRows(
+        [        ['Ductal', {{ duct }}] , ['Lobular', {{ lob }} ] ]
+        );
+
+     var options = {
+       title: 'Probabilidad Ducta-Lobular',
+       width: 500,
+       height: 300,
+       legend: 'none',
+       bar: {groupWidth: '95%'},
+       vAxis: { gridlines: { count: 2 } }
+     };
+
+     var chart = new google.visualization.ColumnChart(document.getElementById('number_format_chart'));
+     chart.draw(data, options);
+
+    
+  };
+</script>
+
 </body>
 
 </html>

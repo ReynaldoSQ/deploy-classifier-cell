@@ -1,4 +1,5 @@
 from fastai.vision import load_learner, open_image
+from PIL import Image
 
 def prediction(dir, img):
     Clasificador=load_learner(dir)
@@ -20,3 +21,7 @@ def advertencia(a,b):
     if a<80 and b<80:
         adv='No seguro, se recomienda implementar otra herramienta o fotografía.'
     return adv
+
+def img_to_png(img_url):
+    im = Image.open(img_url)
+    im.save('static\img.PNG')

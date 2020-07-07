@@ -1,5 +1,5 @@
 --find-links https://download.pytorch.org/whl/torch_stable.html
-fastai==1.0.6+cpu
+fastai==1.0.6
 Flask==1.1.2
 gunicorn==20.0.4
 numpy==1.18.1
